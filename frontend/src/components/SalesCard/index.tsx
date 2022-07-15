@@ -21,18 +21,25 @@ function SalesCard() {
 
   useEffect(() => {
 
-    // console.log("Teste");
+    // Passar argumentos de data que estiverem nos botões das datas
 
+    const dmin = minDate.toISOString().slice(0, 10);
+    const dmax = maxDate.toISOString().slice(0, 10);
+
+    console.log(dmin); // console.log(minDate);
+
+    // console.log("Teste");
     // Fazer uma requisição
     // axios.get("http://localhost:8080/sales")
+    // axios.get(`${BASE_URL}/sales`)
 
-    axios.get(`${BASE_URL}/sales`)
+    axios.get(`${BASE_URL}/sales?minDate=${dmin}&maxDate=${dmax}`)
       .then(response => {
         // console.log(response.data); <-- Mostrar na TELA
         setSales(response.data.content);
       });
 
-  }, [])
+  }, [minDate, maxDate])
 
   return (
     <div className="dsmeta-card">
