@@ -26,7 +26,7 @@ function SalesCard() {
     const dmin = minDate.toISOString().slice(0, 10);
     const dmax = maxDate.toISOString().slice(0, 10);
 
-    console.log(dmin); // console.log(minDate);
+    // console.log(dmin);  console.log(minDate);
 
     // console.log("Teste");
     // Fazer uma requisição
@@ -94,7 +94,7 @@ function SalesCard() {
                       {/*<div className="dsmeta-red-btn">
                     <img src="notification-icon.svg" alt="Notificar" />
                   </div> */}
-                      <NotificationButton />
+                      <NotificationButton saleId={item_sale.id} /> {/* Recebe parâmetros Props*/}
                     </div>
                   </td>
                 </tr>
